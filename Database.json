@@ -1,0 +1,24 @@
+{
+    "name": "Slides",
+    "tables": [
+        {
+            "name": "Slides",
+            "columns": [
+                {
+                    "name": "Title"
+                },
+                {
+                    "name": "ImageId"
+                }
+            ]
+        },
+        {
+            "name": "Images",
+            "columns": [
+                {
+                    "name": "Path"
+                }
+            ]
+        }
+    ]
+}
