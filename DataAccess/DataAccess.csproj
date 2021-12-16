@@ -3,8 +3,8 @@
   <Import Project="/HolismDotNet/Infra/DotNet.targets" />
 
   <PropertyGroup>
-    <AssemblyName>Holism.Blog.DataAccess</AssemblyName>
-    <RootNamespace>Holism.Blog.DataAccess</RootNamespace>
+    <AssemblyName>Holism.Slide.DataAccess</AssemblyName>
+    <RootNamespace>Holism.Slide.DataAccess</RootNamespace>
   </PropertyGroup>
 
   <Import Project="/HolismDotNet/Infra/DataAccess.targets" />

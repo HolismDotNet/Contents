@@ -1,6 +1,6 @@
-namespace Holism.Blog.AdminApi;
+namespace Holism.Slide.AdminApi;
 
-public class PostController : Controller<Post, Post>
+public class SlideController : Controller<Post, Post>
 {
     public override ReadBusiness<Post> ReadBusiness => new PostBusiness();
     

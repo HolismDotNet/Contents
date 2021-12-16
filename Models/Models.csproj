@@ -3,8 +3,8 @@
   <Import Project="/HolismDotNet/Infra/DotNet.targets" />
 
   <PropertyGroup>
-    <AssemblyName>Holism.Blog.Models</AssemblyName>
-    <RootNamespace>Holism.Blog.Models</RootNamespace>
+    <AssemblyName>Holism.Slide.Models</AssemblyName>
+    <RootNamespace>Holism.Slide.Models</RootNamespace>
   </PropertyGroup>
 
   <Import Project="/HolismDotNet/Infra/Models.targets" />
