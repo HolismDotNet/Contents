@@ -1,4 +1,4 @@
-namespace Holism.Slides.DataAccess;
+namespace Slides;
 
 public class SlidesContext : DatabaseContext
 {

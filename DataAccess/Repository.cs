@@ -1,20 +1,20 @@
-namespace Holism.Slides.DataAccess;
+namespace Slides;
 
 public class Repository
 {
-    public static Repository<SlideImage> SlideImage
+    public static Repository<Slides.SlideImage> SlideImage
     {
         get
         {
-            return new Repository<SlideImage>(new SlidesContext());
-        }
-    }    public static Repository<Slide> Slide
-    {
-        get
-        {
-            return new Repository<Slide>(new SlidesContext());
+            return new Repository<Slides.SlideImage>(new SlidesContext());
         }
     }
 
-
+    public static Repository<Slides.Slide> Slide
+    {
+        get
+        {
+            return new Repository<Slides.Slide>(new SlidesContext());
+        }
+    }
 }

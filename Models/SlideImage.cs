@@ -1,4 +1,4 @@
-namespace Holism.Slides.Models;
+namespace Slides;
 
 public class SlideImage : IEntity
 {
