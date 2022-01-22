@@ -1,8 +1,8 @@
 namespace Holism.Slides.Models;
 
-public class Image : IEntity
+public class SlideImage : IEntity
 {
-    public Image()
+    public SlideImage()
     {
         RelatedItems = new ExpandoObject();
     }

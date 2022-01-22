@@ -13,7 +13,7 @@
             ]
         },
         {
-            "name": "Images",
+            "name": "SlideImages",
             "columns": [
                 {
                     "name": "Path"

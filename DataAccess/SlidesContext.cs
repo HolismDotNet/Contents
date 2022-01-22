@@ -4,7 +4,7 @@ public class SlidesContext : DatabaseContext
 {
     public override string ConnectionStringName => "Slides";
 
-    public DbSet<Image> Images { get; set; }
+    public DbSet<SlideImage> SlideImages { get; set; }
 
     public DbSet<Slide> Slides { get; set; }
 
