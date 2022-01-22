@@ -1,6 +1,4 @@
-
-
-namespace Holism.Slides.Business;
+namespace Slides;
 
 public class SlideBusiness : Business<Slide, Slide>
 {
