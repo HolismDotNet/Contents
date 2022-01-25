@@ -4,9 +4,9 @@ public class SlidesContext : DatabaseContext
 {
     public override string ConnectionStringName => "Slides";
 
-    public DbSet<SlideImage> SlideImages { get; set; }
+    public DbSet<Slides.SlideImage> SlideImages { get; set; }
 
-    public DbSet<Slide> Slides { get; set; }
+    public DbSet<Slides.Slide> Slides { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
