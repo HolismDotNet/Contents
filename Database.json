@@ -1,22 +1,50 @@
 {
-    "name": "Slides",
+    "name": "Sliders",
     "tables": [
         {
-            "name": "Slides",
+            "name": "Sliders",
+            "hasGuid": true,
+            "hasKey": true,
             "columns": [
                 {
                     "name": "Title"
-                },
-                {
-                    "name": "ImageId"
                 }
             ]
         },
         {
-            "name": "SlideImages",
+            "name": "Slides",
+            "hasOrder": true,
             "columns": [
                 {
-                    "name": "Path"
+                    "name": "SliderId"
+                },
+                {
+                    "name": "ImageGuid",
+                    "isNullable": true
+                },
+                {
+                    "name": "AvatarGuid",
+                    "isNullable": true
+                },
+                {
+                    "name": "Title",
+                    "isNullable": true
+                },
+                {
+                    "name": "Subtitle",
+                    "isNullable": true
+                },
+                {
+                    "name": "Summary",
+                    "isNullable": true
+                },
+                {
+                    "name": "Url",
+                    "isNullable": true
+                },
+                {
+                    "name": "ExtraJson",
+                    "isNullable": true
                 }
             ]
         }
