@@ -1,4 +1,4 @@
-namespace Slides;
+namespace Sliders;
 
 public class SlideBusiness : Business<Slide, Slide>
 {

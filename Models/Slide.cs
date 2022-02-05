@@ -25,7 +25,7 @@ public class Slide : IEntity, IOrder
 
     public string ExtraJson { get; set; }
 
-    public string Order { get; set; }
+    public long Order { get; set; }
 
     public dynamic RelatedItems { get; set; }
 }
