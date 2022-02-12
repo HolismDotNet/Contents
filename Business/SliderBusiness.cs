@@ -2,7 +2,7 @@ namespace Sliders;
 
 public class SlideBusiness : Business<Slide, Slide>
 {
-    protected override ReadRepository<Slide> ReadRepository => Repository.Slide;
+    protected override Read<Slide> Read => Repository.Slide;
 
-    protected override Repository<Slide> WriteRepository => Repository.Slide;
+    protected override Write<Slide> Write => Repository.Slide;
 }

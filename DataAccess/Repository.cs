@@ -2,19 +2,19 @@ namespace Sliders;
 
 public class Repository
 {
-    public static Repository<Sliders.Slider> Slider
+    public static Write<Sliders.Slider> Slider
     {
         get
         {
-            return new Repository<Sliders.Slider>(new SlidersContext());
+            return new Write<Sliders.Slider>(new SlidersContext());
         }
     }
 
-    public static Repository<Sliders.Slide> Slide
+    public static Write<Sliders.Slide> Slide
     {
         get
         {
-            return new Repository<Sliders.Slide>(new SlidersContext());
+            return new Write<Sliders.Slide>(new SlidersContext());
         }
     }
 }
