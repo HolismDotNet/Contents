@@ -1,17 +1,17 @@
-namespace Sliders;
+namespace Contents;
 
-public class Slider : IEntity, IGuid, IKey
+public class Image : IEntity, IKey
 {
-    public Slider()
+    public Image()
     {
         RelatedItems = new ExpandoObject();
     }
 
     public long Id { get; set; }
 
-    public Guid Guid { get; set; }
-
     public string Title { get; set; }
+
+    public Guid ImageGuid { get; set; }
 
     public string Key { get; set; }
 

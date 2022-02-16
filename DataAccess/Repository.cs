@@ -1,20 +1,44 @@
-namespace Sliders;
+namespace Contents;
 
 public class Repository
 {
-    public static Write<Sliders.Slider> Slider
+    public static Write<Contents.Action> Action
     {
         get
         {
-            return new Write<Sliders.Slider>(new SlidersContext());
+            return new Write<Contents.Action>(new ContentsContext());
         }
     }
 
-    public static Write<Sliders.Slide> Slide
+    public static Write<Contents.Image> Image
     {
         get
         {
-            return new Write<Sliders.Slide>(new SlidersContext());
+            return new Write<Contents.Image>(new ContentsContext());
+        }
+    }
+
+    public static Write<Contents.Item> Item
+    {
+        get
+        {
+            return new Write<Contents.Item>(new ContentsContext());
+        }
+    }
+
+    public static Write<Contents.Section> Section
+    {
+        get
+        {
+            return new Write<Contents.Section>(new ContentsContext());
+        }
+    }
+
+    public static Write<Contents.Text> Text
+    {
+        get
+        {
+            return new Write<Contents.Text>(new ContentsContext());
         }
     }
 }

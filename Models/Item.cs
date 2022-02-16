@@ -1,15 +1,15 @@
-namespace Sliders;
+namespace Contents;
 
-public class Slide : IEntity, IOrder
+public class Item : IEntity, IOrder
 {
-    public Slide()
+    public Item()
     {
         RelatedItems = new ExpandoObject();
     }
 
     public long Id { get; set; }
 
-    public long SliderId { get; set; }
+    public long SectionId { get; set; }
 
     public Guid? ImageGuid { get; set; }
 

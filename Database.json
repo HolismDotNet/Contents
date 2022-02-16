@@ -1,22 +1,49 @@
 {
-    "name": "Sliders",
+    "name": "Contents",
     "tables": [
         {
-            "name": "Sliders",
-            "hasGuid": true,
+            "name": "Sections",
             "hasKey": true,
+            "hasOrder": true,
+            "hasGuid": true,
             "columns": [
                 {
+                    "name": "Supertitle"
+                },
+                {
                     "name": "Title"
+                },
+                {
+                    "name": "Subtitle"
+                },
+                {
+                    "name": "Description"
+                },
+                {
+                    "name": "ImageGuid"
                 }
             ]
         },
         {
-            "name": "Slides",
+            "name": "Actions",
+            "columns": [
+                {
+                    "name": "SectionId"
+                },
+                {
+                    "name": "CtaText"
+                },
+                {
+                    "name": "CtaLink"
+                }
+            ]
+        },
+        {
+            "name": "Items",
             "hasOrder": true,
             "columns": [
                 {
-                    "name": "SliderId"
+                    "name": "SectionId"
                 },
                 {
                     "name": "ImageGuid",
@@ -45,6 +72,30 @@
                 {
                     "name": "ExtraJson",
                     "isNullable": true
+                }
+            ]
+        },
+        {
+            "name": "Texts",
+            "hasKey": true,
+            "columns": [
+                {
+                    "name": "Title"
+                },
+                {
+                    "name": "Value"
+                }
+            ]
+        },
+        {
+            "name": "Images",
+            "hasKey": true,
+            "columns": [
+                {
+                    "name": "Title"
+                },
+                {
+                    "name": "ImageGuid"
                 }
             ]
         }
