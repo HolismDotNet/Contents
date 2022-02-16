@@ -11,6 +11,8 @@ public class Item : IEntity, IOrder
 
     public long SectionId { get; set; }
 
+    public string IconSvg { get; set; }
+
     public Guid? ImageGuid { get; set; }
 
     public Guid? AvatarGuid { get; set; }
@@ -21,7 +23,9 @@ public class Item : IEntity, IOrder
 
     public string Summary { get; set; }
 
-    public string Url { get; set; }
+    public string CtaLink { get; set; }
+
+    public string CtaText { get; set; }
 
     public string ExtraJson { get; set; }
 

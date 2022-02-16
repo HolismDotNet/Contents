@@ -8,6 +8,9 @@
             "hasGuid": true,
             "columns": [
                 {
+                    "name": "Name"
+                },
+                {
                     "name": "Supertitle"
                 },
                 {
@@ -20,7 +23,8 @@
                     "name": "Description"
                 },
                 {
-                    "name": "ImageGuid"
+                    "name": "ImageGuid",
+                    "isNullable": true
                 }
             ]
         },
@@ -46,6 +50,10 @@
                     "name": "SectionId"
                 },
                 {
+                    "name": "IconSvg",
+                    "isNullable": true
+                },
+                {
                     "name": "ImageGuid",
                     "isNullable": true
                 },
@@ -66,7 +74,11 @@
                     "isNullable": true
                 },
                 {
-                    "name": "Url",
+                    "name": "CtaLink",
+                    "isNullable": true
+                },
+                {
+                    "name": "CtaText",
                     "isNullable": true
                 },
                 {

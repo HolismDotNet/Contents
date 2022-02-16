@@ -11,6 +11,8 @@ public class Section : IEntity, IGuid, IKey, IOrder
 
     public Guid Guid { get; set; }
 
+    public string Name { get; set; }
+
     public string Supertitle { get; set; }
 
     public string Title { get; set; }
@@ -19,7 +21,7 @@ public class Section : IEntity, IGuid, IKey, IOrder
 
     public string Description { get; set; }
 
-    public Guid ImageGuid { get; set; }
+    public Guid? ImageGuid { get; set; }
 
     public string Key { get; set; }
 
