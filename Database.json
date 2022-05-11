@@ -2,6 +2,24 @@
     "name": "Contents",
     "tables": [
         {
+            "name": "Pages",
+            "hasGuid": true,
+            "columns": [
+                {
+                    "name": "HierarchyGuid"
+                }
+            ]
+        },
+        {
+            "name": "PageContents",
+            "isOneToOneWith": "Pages",
+            "columns": [
+                {
+                    "name": "Content"
+                }
+            ]
+        },
+        {
             "name": "Sections",
             "hasKey": true,
             "hasOrder": true,
