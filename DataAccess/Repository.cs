@@ -42,6 +42,14 @@ public class Repository
         }
     }
 
+    public static Write<Contents.PageView> PageView
+    {
+        get
+        {
+            return new Write<Contents.PageView>(new ContentsContext());
+        }
+    }
+
     public static Write<Contents.Section> Section
     {
         get

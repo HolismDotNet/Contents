@@ -1,12 +1,12 @@
 namespace Contents;
 
-public class PageBusiness : Business<Page, Page>
+public class PageBusiness : Business<PageView, Page>
 {
-    protected override Read<Page> Read => Repository.Page;
+    protected override Read<PageView> Read => Repository.PageView;
 
     protected override Write<Page> Write => Repository.Page;
 
-    public Page ToggleCommentAcceptance(long id)
+    public PageView ToggleCommentAcceptance(long id)
     {
         var page = Write.Get(id);
         page.AcceptsComment = !page.AcceptsComment;
@@ -14,7 +14,7 @@ public class PageBusiness : Business<Page, Page>
         return Get(page.Id);
     }
 
-    public Page ChangeImage(long pageId, byte[] bytes)
+    public PageView ChangeImage(long pageId, byte[] bytes)
     {
         var page = Write.Get(pageId);
         if (page.ImageGuid.HasValue)

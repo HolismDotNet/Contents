@@ -139,5 +139,22 @@
                 }
             ]
         }
+    ],
+    "views": [
+        {
+            "name": "PageViews",
+            "query": [
+                "select",
+                "    p.*,",
+                "    h.Id as HierarchyId,",
+                "    h.Title,",
+                "    h.ParentId,",
+                "    h.Description,",
+                "    h.Slug",
+                "from Pages p",
+                "inner join Taxonomy.Hierarchies h",
+                "on p.HierarchyGuid = h.Guid"
+            ]
+        }
     ]
 }
