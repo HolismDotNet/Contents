@@ -9,8 +9,14 @@
                     "name": "HierarchyGuid"
                 },
                 {
-                    "name": "MainImageGuid",
+                    "name": "ImageGuid",
                     "isNullable": true
+                },
+                {
+                    "name": "AcceptsComment",
+                    "type": "boolean",
+                    "hasDefault": true,
+                    "defaultSqlText": "1"
                 }
             ]
         },
