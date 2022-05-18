@@ -10,6 +10,10 @@ public class ContentsContext : DatabaseContext
 
     public DbSet<Contents.Item> Items { get; set; }
 
+    public DbSet<Contents.PageContent> PageContents { get; set; }
+
+    public DbSet<Contents.Page> Pages { get; set; }
+
     public DbSet<Contents.Section> Sections { get; set; }
 
     public DbSet<Contents.Text> Texts { get; set; }

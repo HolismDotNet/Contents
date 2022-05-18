@@ -26,6 +26,22 @@ public class Repository
         }
     }
 
+    public static Write<Contents.PageContent> PageContent
+    {
+        get
+        {
+            return new Write<Contents.PageContent>(new ContentsContext());
+        }
+    }
+
+    public static Write<Contents.Page> Page
+    {
+        get
+        {
+            return new Write<Contents.Page>(new ContentsContext());
+        }
+    }
+
     public static Write<Contents.Section> Section
     {
         get
