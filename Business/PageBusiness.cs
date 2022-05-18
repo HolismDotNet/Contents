@@ -6,6 +6,12 @@ public class PageBusiness : Business<PageView, Page>
 
     protected override Write<Page> Write => Repository.Page;
 
+    protected override void ModifyItemBeforeReturning(PageView item)
+    {
+        item.RelatedItems.ImageUrl = Storage.GetImageUrl(ContainerName, item.ImageGuid ?? Guid.Empty);
+        base.ModifyItemBeforeReturning(item);
+    }
+
     public PageView ToggleCommentAcceptance(long id)
     {
         var page = Write.Get(id);
