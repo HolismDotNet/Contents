@@ -136,6 +136,14 @@
                 },
                 {
                     "name": "ImageGuid"
+                },
+                {
+                    "name": "RecommendedDimensions",
+                    "isNullable": true
+                },
+                {
+                    "name": "RecommendedColorScheme",
+                    "isNullable": true
                 }
             ]
         }
