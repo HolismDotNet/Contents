@@ -10,7 +10,7 @@
                 },
                 {
                     "name": "ImageGuid",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "AcceptsComment",
@@ -52,7 +52,7 @@
                 },
                 {
                     "name": "ImageGuid",
-                    "isNullable": true
+                    "nullable": true
                 }
             ]
         },
@@ -79,39 +79,39 @@
                 },
                 {
                     "name": "IconSvg",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "ImageGuid",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "AvatarGuid",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "Title",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "Subtitle",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "Summary",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "CtaLink",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "CtaText",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "ExtraJson",
-                    "isNullable": true
+                    "nullable": true
                 }
             ]
         },
@@ -139,11 +139,11 @@
                 },
                 {
                     "name": "RecommendedDimensions",
-                    "isNullable": true
+                    "nullable": true
                 },
                 {
                     "name": "RecommendedColorScheme",
-                    "isNullable": true
+                    "nullable": true
                 }
             ]
         }
