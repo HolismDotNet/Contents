@@ -1,6 +1,6 @@
 namespace Contents;
 
-public class PageContent : IEntity
+public class PageContent : IEntity, IClob
 {
     public PageContent()
     {
