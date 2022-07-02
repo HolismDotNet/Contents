@@ -6,11 +6,8 @@
             "hasGuid": true,
             "columns": [
                 {
-                    "name": "HierarchyGuid"
-                },
-                {
-                    "name": "ImageGuid",
-                    "nullable": true
+                    "name": "HierarchyGuid",
+                    "unique": true
                 },
                 {
                     "name": "AcceptsComment",

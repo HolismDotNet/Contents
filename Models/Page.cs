@@ -13,8 +13,6 @@ public class Page : IEntity, IGuid
 
     public Guid HierarchyGuid { get; set; }
 
-    public Guid? ImageGuid { get; set; }
-
     public bool AcceptsComment { get; set; }
 
     public dynamic RelatedItems { get; set; }
