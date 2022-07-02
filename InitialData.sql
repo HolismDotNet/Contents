@@ -1,12 +1,42 @@
-insert ignore into Texts (Title, `Value`, `Key`)
+insert ignore into Texts 
+(
+    Title,
+    `Value`,
+    `Key`
+)
 values
-('Brand', 'Brand', 'brand'),
-('Copyright', 'Copyright, All rights reserved', 'copyright');
+(
+    'Brand', 
+    'Brand', 
+    'brand'
+),
+(
+    'Copyright', 
+    'Copyright, All rights reserved', 
+    'copyright'
+);
 
-insert ignore into Sections (Name, Supertitle, Title, Subtitle, Description, `Key`)
+select Id into @heroId
+from Sections
+where `Key` = 'hero';
+
+insert into Actions
+(
+    SectionId,
+    CtaText,
+    CtaLink
+)
 values
-('Services', 'Tailored for affordability', 'Choose with confidence', 'We are always here for you', 'Our services are designed to make your life easier and more productive. We settle only when you are satisfied', 'services'),
-('Testimonials', null, 'See what others say', 'Our reputation is our client''s trust', null, 'testimonials');
+(
+    @heroId,
+    'Start today',
+    '/start'
+),
+(
+    @heroId,
+    'Watch how',
+    '/watch'
+);
 
 select Id into @servicesId
 from Sections
