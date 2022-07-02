@@ -16,6 +16,8 @@ public class ContentsContext : DatabaseContext
 
     public DbSet<Contents.PageView> PageViews { get; set; }
 
+    public DbSet<Contents.SectionContent> SectionContents { get; set; }
+
     public DbSet<Contents.Section> Sections { get; set; }
 
     public DbSet<Contents.Text> Texts { get; set; }

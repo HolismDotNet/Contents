@@ -50,6 +50,14 @@ public class Repository
         }
     }
 
+    public static Write<Contents.SectionContent> SectionContent
+    {
+        get
+        {
+            return new Write<Contents.SectionContent>(new ContentsContext());
+        }
+    }
+
     public static Write<Contents.Section> Section
     {
         get
