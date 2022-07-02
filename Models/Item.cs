@@ -17,6 +17,8 @@ public class Item : IEntity, IOrder
 
     public Guid? AvatarGuid { get; set; }
 
+    public string Supertitle { get; set; }
+
     public string Title { get; set; }
 
     public string Subtitle { get; set; }
