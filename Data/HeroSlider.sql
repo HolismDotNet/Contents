@@ -1,4 +1,4 @@
-replace into Sections 
+insert ignore into Contents.Sections 
 (
     Name, 
     Supertitle, 
