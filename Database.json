@@ -36,16 +36,20 @@
                     "name": "Name"
                 },
                 {
-                    "name": "Supertitle"
+                    "name": "Supertitle",
+                    "nullable": true
                 },
                 {
-                    "name": "Title"
+                    "name": "Title",
+                    "nullable": true
                 },
                 {
-                    "name": "Subtitle"
+                    "name": "Subtitle",
+                    "nullable": true
                 },
                 {
-                    "name": "Description"
+                    "name": "Description",
+                    "nullable": true
                 },
                 {
                     "name": "ImageGuid",
