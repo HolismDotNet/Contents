@@ -23,6 +23,10 @@ public class Section : IEntity, IGuid, IKey, IOrder
 
     public Guid? ImageGuid { get; set; }
 
+    public string CanChangeItemsCount { get; set; }
+
+    public string CanChangeActionsCount { get; set; }
+
     public string Key { get; set; }
 
     public long Order { get; set; }

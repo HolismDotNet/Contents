@@ -22,15 +22,16 @@ public class PageBusiness : Business<PageView, Page>
 
     public PageView ChangeImage(long pageId, byte[] bytes)
     {
-        var page = Write.Get(pageId);
-        if (page.ImageGuid.HasValue)
+        var page = Get(pageId);
+        var hierarchy = new HierarchyBusiness().GetByGuid(page.HierarchyGuid);
+        if (hierarchy.ImageGuid.HasValue)
         {
-            Storage.DeleteImage(ContainerName, page.ImageGuid.Value);
+            Storage.DeleteImage(ContainerName, hierarchy.ImageGuid.Value);
         }
         var fullHdImage = ImageHelper.MakeImageThumbnail(Resolution.FullHd, null, bytes);
-        page.ImageGuid = Guid.NewGuid();
-        Storage.UploadImage(fullHdImage.GetBytes(), page.ImageGuid.Value, ContainerName);
-        Write.Update(page);
+        hierarchy.ImageGuid = Guid.NewGuid();
+        Storage.UploadImage(fullHdImage.GetBytes(), hierarchy.ImageGuid.Value, ContainerName);
+        new HierarchyBusiness().SetImage(hierarchy.Id, hierarchy.ImageGuid.Value);
         return Get(pageId);
     }
 }

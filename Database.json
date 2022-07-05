@@ -50,6 +50,14 @@
                 {
                     "name": "ImageGuid",
                     "nullable": true
+                },
+                {
+                    "name": "CanChangeItemsCount",
+                    "nullable": true
+                },
+                {
+                    "name": "CanChangeActionsCount",
+                    "nullable": true
                 }
             ]
         },
