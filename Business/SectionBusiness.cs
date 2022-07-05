@@ -35,13 +35,13 @@ public class SectionBusiness : Business<Section, Section>
             }
             else
             {
-                // section = GetByKey(key);
-                // if (section != null)
-                // {
-                //     sections.Add((Section)section);
-                // }
+                Logger.LogWarning($"Section {key} is not cached. It might not exist in the database");
+                var dbSection = GetByKey(key);
+                if (dbSection != null)
+                {
+                    sections.Add(dbSection);
+                }
             }
-            sections.Add(new Section());
         }
         return sections;
     }
