@@ -17,6 +17,8 @@ public class PageView : IEntity, IGuid, ISlug, IParent
 
     public long HierarchyId { get; set; }
 
+    public Guid? ImageGuid { get; set; }
+
     public string Title { get; set; }
 
     public long? ParentId { get; set; }

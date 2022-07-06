@@ -186,6 +186,7 @@
                 "select",
                 "    p.*,",
                 "    h.Id as HierarchyId,",
+                "    h.ImageGuid,",
                 "    h.Title,",
                 "    h.ParentId,",
                 "    h.Description,",
