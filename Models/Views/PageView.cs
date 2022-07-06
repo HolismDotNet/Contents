@@ -13,8 +13,6 @@ public class PageView : IEntity, IGuid, ISlug, IParent
 
     public Guid HierarchyGuid { get; set; }
 
-    public Guid? ImageGuid { get; set; }
-
     public bool AcceptsComment { get; set; }
 
     public long HierarchyId { get; set; }
