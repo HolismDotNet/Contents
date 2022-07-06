@@ -67,7 +67,7 @@
         },
         {
             "name": "SectionContents",
-            "isOneToOneWith": "Sections",
+            "oneToOneWith": "Sections",
             "columns": [
                 {
                     "name": "Content"
