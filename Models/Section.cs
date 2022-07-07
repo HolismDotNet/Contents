@@ -23,9 +23,9 @@ public class Section : IEntity, IGuid, IKey, IOrder
 
     public Guid? ImageGuid { get; set; }
 
-    public string CanChangeItemsCount { get; set; }
+    public bool? VariableItems { get; set; }
 
-    public string CanChangeActionsCount { get; set; }
+    public bool? VariableActions { get; set; }
 
     public string Key { get; set; }
 

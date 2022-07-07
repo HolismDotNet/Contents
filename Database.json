@@ -56,11 +56,13 @@
                     "nullable": true
                 },
                 {
-                    "name": "CanChangeItemsCount",
+                    "name": "VariableItems",
+                    "type": "boolean",
                     "nullable": true
                 },
                 {
-                    "name": "CanChangeActionsCount",
+                    "name": "VariableActions",
+                    "type": "boolean",
                     "nullable": true
                 }
             ]

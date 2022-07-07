@@ -75,4 +75,20 @@ public class SectionBusiness : Business<Section, Section>
         var result = sections.ToDictionary(i => i.Key, i => i);
         return result;
     }
+
+    public Section ToggleItemsVariability(long id)
+    {
+        var section = Write.Get(id);
+        section.VariableItems = section.VariableItems == null ? true : !section.VariableItems;
+        Update(section);
+        return Get(section.Id);
+    }
+
+    public Section ToggleActionsVariability(long id)
+    {
+        var section = Write.Get(id);
+        section.VariableActions = section.VariableActions == null ? true : !section.VariableActions;
+        Update(section);
+        return Get(section.Id);
+    }
 }
