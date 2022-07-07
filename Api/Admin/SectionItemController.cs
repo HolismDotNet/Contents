@@ -17,4 +17,13 @@ public class SectionItemController : Controller<Item, Item>
         }
         listParameters.AddFilter<Item>(i => i.SectionId, SectionId.Value);
     };
+
+    [HttpPost]
+    public Item SetCta(long id)
+    {
+        var ctaText = HttpContext.ExtractProperty("CtaText").ToString();;
+        var ctaLink = HttpContext.ExtractProperty("CtaLink").ToString();;
+        var item = new ItemBusiness().SetCta(id, ctaText, ctaLink);
+        return item;
+    }
 }
