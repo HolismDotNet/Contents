@@ -6,6 +6,15 @@ public class ItemBusiness : Business<Item, Item>
 
     protected override Write<Item> Write => Repository.Item;
 
+    protected override void ModifyItemBeforeReturning(Item item)
+    {
+        if (item.ImageGuid.HasValue)
+        {
+            item.RelatedItems.ImageUrl = Storage.GetImageUrl(ContainerName, item.ImageGuid.Value);
+        }
+        base.ModifyItemBeforeReturning(item);
+    }
+
     public List<Item> GetItems(long sectionId)
     {
         var items = GetList(i => i.SectionId == sectionId);
