@@ -66,8 +66,7 @@
                     "nullable": true
                 },
                 {
-                    "name": "Props",
-                    "type": "json",
+                    "name": "Json",
                     "nullable": true
                 }
             ]
@@ -140,15 +139,23 @@
                     "nullable": true
                 },
                 {
-                    "name": "CtaLink",
+                    "name": "PrimaryCtaText",
                     "nullable": true
                 },
                 {
-                    "name": "CtaText",
+                    "name": "PrimaryCtaLink",
                     "nullable": true
                 },
                 {
-                    "name": "ExtraJson",
+                    "name": "SecondaryCtaText",
+                    "nullable": true
+                },
+                {
+                    "name": "SecondaryCtaLink",
+                    "nullable": true
+                },
+                {
+                    "name": "Json",
                     "nullable": true
                 }
             ]

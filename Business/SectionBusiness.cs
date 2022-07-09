@@ -9,6 +9,7 @@ public class SectionBusiness : Business<Section, Section>
     protected override void ModifyItemBeforeReturning(Section item)
     {
         item.RelatedItems.ImageUrl = Storage.GetImageUrl(ContainerName, item.ImageGuid ?? Guid.Empty);
+        base.ModifyItemBeforeReturning(item);
     }
 
     public override Section GetByKey(string key)

@@ -25,25 +25,4 @@ public class PageController : Controller<PageView, Page>
             new HierarchyBusiness().Update(dbHierarchy.CastTo<Hierarchy>());
         }
     };
-
-    [HttpPost]
-    public PageView ToggleCommentAcceptance(long id)
-    {
-        var page = new PageBusiness().ToggleCommentAcceptance(id);
-        return page;
-    }
-
-    [FileUploadChecker]
-    [HttpPost]
-    public PageView SetImage(IFormFile file)
-    {
-        var pageId = Request.Query["pageId"];
-        if (pageId.Count == 0)
-        {
-            throw new ClientException("Please provide pageId");
-        }
-        var bytes = file.OpenReadStream().GetBytes();
-        var page = new PageBusiness().ChangeImage(pageId[0].ToLong(), bytes);
-        return page;
-    }
 }

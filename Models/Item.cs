@@ -25,11 +25,15 @@ public class Item : IEntity, IOrder
 
     public string Summary { get; set; }
 
-    public string CtaLink { get; set; }
+    public string PrimaryCtaText { get; set; }
 
-    public string CtaText { get; set; }
+    public string PrimaryCtaLink { get; set; }
 
-    public string ExtraJson { get; set; }
+    public string SecondaryCtaText { get; set; }
+
+    public string SecondaryCtaLink { get; set; }
+
+    public string Json { get; set; }
 
     public long Order { get; set; }
 

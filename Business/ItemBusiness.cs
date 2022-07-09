@@ -21,8 +21,8 @@ public class ItemBusiness : Business<Item, Item>
     public Item SetCta(long id, string ctaText, string ctaLink)
     {
         var item = Write.Get(id);
-        item.CtaText = ctaText;
-        item.CtaLink = ctaLink;
+        item.PrimaryCtaText = ctaText;
+        item.PrimaryCtaLink = ctaLink;
         Update(item);
         return Get(id);
     }
