@@ -46,20 +46,6 @@ public class SectionBusiness : Business<Section, Section>
         return sections;
     }
 
-    public Section ChangeImage(long sectionId, byte[] bytes)
-    {
-        var section = Write.Get(sectionId);
-        if (section.ImageGuid.HasValue)
-        {
-            Storage.DeleteImage(ContainerName, section.ImageGuid.Value);
-        }
-        var nhdImage = ImageHelper.MakeImageThumbnail(Resolution.Nhd, null, bytes);
-        section.ImageGuid = Guid.NewGuid();
-        Storage.UploadImage(nhdImage.GetBytes(), section.ImageGuid.Value, ContainerName);
-        Write.Update(section);
-        return Get(sectionId);
-    }
-
     public Dictionary<string, Section> LoadCache()
     {
         var keys = GetKeys();
@@ -74,21 +60,5 @@ public class SectionBusiness : Business<Section, Section>
         }
         var result = sections.ToDictionary(i => i.Key, i => i);
         return result;
-    }
-
-    public Section ToggleItemsVariability(long id)
-    {
-        var section = Write.Get(id);
-        section.VariableItems = section.VariableItems == null ? true : !section.VariableItems;
-        Update(section);
-        return Get(section.Id);
-    }
-
-    public Section ToggleActionsVariability(long id)
-    {
-        var section = Write.Get(id);
-        section.VariableActions = section.VariableActions == null ? true : !section.VariableActions;
-        Update(section);
-        return Get(section.Id);
     }
 }

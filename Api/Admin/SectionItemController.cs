@@ -26,18 +26,4 @@ public class SectionItemController : Controller<Item, Item>
         var item = new ItemBusiness().SetCta(id, ctaText, ctaLink);
         return item;
     }
-
-    [FileUploadChecker]
-    [HttpPost]
-    public Item SetImage(IFormFile file)
-    {
-        var itemId = Request.Query["itemId"];
-        if (itemId.Count == 0)
-        {
-            throw new ClientException("Please provide itemId");
-        }
-        var bytes = file.OpenReadStream().GetBytes();
-        var item = new ItemBusiness().ChangeImage(itemId[0].ToLong(), bytes);
-        return item;
-    }
 }
