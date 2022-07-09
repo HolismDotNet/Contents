@@ -8,10 +8,7 @@ public class ItemBusiness : Business<Item, Item>
 
     protected override void ModifyItemBeforeReturning(Item item)
     {
-        if (item.ImageGuid.HasValue)
-        {
-            item.RelatedItems.ImageUrl = Storage.GetImageUrl(ContainerName, item.ImageGuid.Value);
-        }
+        item.RelatedItems.ImageUrl = Storage.GetImageUrl(ContainerName, item.ImageGuid ?? Guid.Empty);
         base.ModifyItemBeforeReturning(item);
     }
 
