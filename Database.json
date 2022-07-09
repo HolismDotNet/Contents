@@ -64,6 +64,11 @@
                     "name": "VariableActions",
                     "type": "boolean",
                     "nullable": true
+                },
+                {
+                    "name": "Props",
+                    "type": "json",
+                    "nullable": true
                 }
             ]
         },

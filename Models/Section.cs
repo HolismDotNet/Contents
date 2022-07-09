@@ -27,6 +27,8 @@ public class Section : IEntity, IGuid, IKey, IOrder
 
     public bool? VariableActions { get; set; }
 
+    public string Props { get; set; }
+
     public string Key { get; set; }
 
     public long Order { get; set; }
