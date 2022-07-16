@@ -56,16 +56,6 @@
                     "nullable": true
                 },
                 {
-                    "name": "VariableItems",
-                    "type": "boolean",
-                    "nullable": true
-                },
-                {
-                    "name": "VariableActions",
-                    "type": "boolean",
-                    "nullable": true
-                },
-                {
                     "name": "Json",
                     "nullable": true
                 }
