@@ -9,7 +9,7 @@ public class SectionBusiness : Business<Section, Section>
     protected override void ModifyItemBeforeReturning(Section item)
     {
         item.RelatedItems.ImageUrl = Storage.GetImageUrl(ContainerName, item.ImageGuid ?? Guid.Empty);
-        item.RelatedItems.Configs = new EntityConfigBusiness().GetConfigs(EntityType, item.Guid);
+        item.RelatedItems.Configs = new EntityConfigBusiness().GetConfigsObject(EntityType, item.Guid);
         base.ModifyItemBeforeReturning(item);
     }
 
