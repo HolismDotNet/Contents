@@ -148,6 +148,15 @@
                     "name": "Json",
                     "nullable": true
                 }
+            ],
+            "indexes": [
+                {
+                    "columns": [
+                        "SectionId",
+                        "Title"
+                    ],
+                    "unique": true
+                }
             ]
         },
         {
