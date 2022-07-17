@@ -19,11 +19,20 @@ public class SectionItemController : Controller<Item, Item>
     };
 
     [HttpPost]
-    public Item SetCta(long id)
+    public Item SetPrimaryCta(long id)
     {
-        var ctaText = HttpContext.ExtractProperty("CtaText").ToString();;
-        var ctaLink = HttpContext.ExtractProperty("CtaLink").ToString();;
-        var item = new ItemBusiness().SetCta(id, ctaText, ctaLink);
+        var ctaText = HttpContext.ExtractProperty("PrimaryCtaText").ToString();;
+        var ctaLink = HttpContext.ExtractProperty("PrimaryCtaLink").ToString();;
+        var item = new ItemBusiness().SetPrimaryCta(id, ctaText, ctaLink);
+        return item;
+    }
+
+    [HttpPost]
+    public Item SetSecondaryCta(long id)
+    {
+        var ctaText = HttpContext.ExtractProperty("SecondaryCtaText").ToString();;
+        var ctaLink = HttpContext.ExtractProperty("SecondaryCtaLink").ToString();;
+        var item = new ItemBusiness().SetSeconaryCta(id, ctaText, ctaLink);
         return item;
     }
 }

@@ -18,11 +18,20 @@ public class ItemBusiness : Business<Item, Item>
         return items;
     }
 
-    public Item SetCta(long id, string ctaText, string ctaLink)
+    public Item SetPrimaryCta(long id, string ctaText, string ctaLink)
     {
         var item = Write.Get(id);
         item.PrimaryCtaText = ctaText;
         item.PrimaryCtaLink = ctaLink;
+        Update(item);
+        return Get(id);
+    }
+
+    public Item SetSeconaryCta(long id, string ctaText, string ctaLink)
+    {
+        var item = Write.Get(id);
+        item.SecondaryCtaText = ctaText;
+        item.SecondaryCtaLink = ctaLink;
         Update(item);
         return Get(id);
     }
