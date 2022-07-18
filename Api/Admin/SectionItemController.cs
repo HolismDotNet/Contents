@@ -39,7 +39,7 @@ public class SectionItemController : Controller<Item, Item>
     [HttpPost]
     public Item SetIconSvg(long id)
     {
-        var svg = HttpContext.GetBody().Result;
+        var svg = HttpContext.GetBody().Result.Deserialize<string>();
         var item = new ItemBusiness().SetIconSvg(id, svg);
         return item;
     }
