@@ -102,6 +102,7 @@
                 },
                 {
                     "name": "IconSvg",
+                    "type": "longText",
                     "nullable": true
                 },
                 {

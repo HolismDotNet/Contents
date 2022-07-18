@@ -35,4 +35,12 @@ public class ItemBusiness : Business<Item, Item>
         Update(item);
         return Get(id);
     }
+
+    public Item SetIconSvg(long id, string svg)
+    {
+        var item = Get(id);
+        item.IconSvg = svg;
+        item = Update(item);
+        return item;
+    }
 }

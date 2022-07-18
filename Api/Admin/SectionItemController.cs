@@ -35,4 +35,12 @@ public class SectionItemController : Controller<Item, Item>
         var item = new ItemBusiness().SetSeconaryCta(id, ctaText, ctaLink);
         return item;
     }
+
+    [HttpPost]
+    public Item SetIconSvg(long id)
+    {
+        var svg = HttpContext.GetBody().Result;
+        var item = new ItemBusiness().SetIconSvg(id, svg);
+        return item;
+    }
 }
