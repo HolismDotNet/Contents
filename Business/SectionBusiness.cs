@@ -48,6 +48,24 @@ public class SectionBusiness : Business<Section, Section>
         return sections;
     }
 
+    public Section SetPrimaryCta(long id, string ctaText, string ctaLink)
+    {
+        var section = Write.Get(id);
+        section.PrimaryCtaText = ctaText;
+        section.PrimaryCtaLink = ctaLink;
+        Update(section);
+        return Get(id);
+    }
+
+    public Section SetSeconaryCta(long id, string ctaText, string ctaLink)
+    {
+        var section = Write.Get(id);
+        section.SecondaryCtaText = ctaText;
+        section.SecondaryCtaLink = ctaLink;
+        Update(section);
+        return Get(id);
+    }
+
     public Dictionary<string, Section> LoadCache()
     {
         var keys = GetKeys();
