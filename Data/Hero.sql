@@ -5,7 +5,11 @@ insert ignore into Contents.Sections
     Title, 
     Subtitle, 
     Description, 
-    `Key`
+    `Key`,
+    PrimaryCtaText,
+    PrimaryCtaLink,
+    SecondaryCtaText,
+    SecondaryCtaLink
 )
 values
 (
@@ -14,27 +18,13 @@ values
     'Improve your life like never before',
     'Start today',
     'We believe that change starts from within. Thus we have united to help each other become a better version of us. A version that we want to be.',
-    'hero'
+    'hero',
+    'Start today',
+    '/start',
+    'Watch how',
+    '/watch'
 );
 
 select Id into @heroId
 from Contents.Sections
 where `Key` = 'hero';
-
-replace into Contents.Actions
-(
-    SectionId,
-    CtaText,
-    CtaLink
-)
-values
-(
-    @heroId,
-    'Start today',
-    '/start'
-),
-(
-    @heroId,
-    'Watch how',
-    '/watch'
-);

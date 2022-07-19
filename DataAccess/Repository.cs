@@ -2,14 +2,6 @@ namespace Contents;
 
 public class Repository
 {
-    public static Write<Contents.Action> Action
-    {
-        get
-        {
-            return new Write<Contents.Action>(new ContentsContext());
-        }
-    }
-
     public static Write<Contents.Image> Image
     {
         get

@@ -23,6 +23,14 @@ public class Section : IEntity, IGuid, IKey, IOrder
 
     public Guid? ImageGuid { get; set; }
 
+    public string PrimaryCtaText { get; set; }
+
+    public string PrimaryCtaLink { get; set; }
+
+    public string SecondaryCtaText { get; set; }
+
+    public string SecondaryCtaLink { get; set; }
+
     public string Json { get; set; }
 
     public string Key { get; set; }

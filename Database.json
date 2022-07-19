@@ -56,6 +56,22 @@
                     "nullable": true
                 },
                 {
+                    "name": "PrimaryCtaText",
+                    "nullable": true
+                },
+                {
+                    "name": "PrimaryCtaLink",
+                    "nullable": true
+                },
+                {
+                    "name": "SecondaryCtaText",
+                    "nullable": true
+                },
+                {
+                    "name": "SecondaryCtaLink",
+                    "nullable": true
+                },
+                {
                     "name": "Json",
                     "nullable": true
                 }
@@ -67,30 +83,6 @@
             "columns": [
                 {
                     "name": "Content"
-                }
-            ]
-        },
-        {
-            "name": "Actions",
-            "columns": [
-                {
-                    "name": "SectionId",
-                    "cascadeDelete": true
-                },
-                {
-                    "name": "CtaText"
-                },
-                {
-                    "name": "CtaLink"
-                }
-            ],
-            "indexes": [
-                {
-                    "columns": [
-                        "SectionId",
-                        "CtaLink"
-                    ],
-                    "isUnique": true
                 }
             ]
         },
