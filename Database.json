@@ -74,7 +74,8 @@
             "name": "Actions",
             "columns": [
                 {
-                    "name": "SectionId"
+                    "name": "SectionId",
+                    "cascadeDelete": true
                 },
                 {
                     "name": "CtaText"
@@ -98,7 +99,8 @@
             "hasOrder": true,
             "columns": [
                 {
-                    "name": "SectionId"
+                    "name": "SectionId",
+                    "cascadeDelete": true
                 },
                 {
                     "name": "IconSvg",
