@@ -9,6 +9,7 @@ public class ItemBusiness : Business<Item, Item>
     protected override void ModifyItemBeforeReturning(Item item)
     {
         item.RelatedItems.ImageUrl = Storage.GetImageUrl(ContainerName, item.ImageGuid ?? Guid.Empty);
+        item.RelatedItems.AvatarUrl = Storage.GetImageUrl(ContainerName, item.AvatarGuid ?? Guid.Empty);
         base.ModifyItemBeforeReturning(item);
     }
 
