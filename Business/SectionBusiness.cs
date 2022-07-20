@@ -27,7 +27,11 @@ public class SectionBusiness : Business<Section, Section>
 
     public List<dynamic> GetAllSections()
     {
-        var keys = GetKeys();
+        List<string> keys = (List<string>)Cache.Get("AllSectionKeys");
+        if (keys == null) 
+        {
+            keys = GetKeys();
+        }
         var sections = GetByKeys(keys.ToArray());
         return sections;
     }
@@ -86,6 +90,7 @@ public class SectionBusiness : Business<Section, Section>
             }
         }
         var result = sections.ToDictionary(i => i.Key, i => Minify(i));
+        result.Add("AllSectionKeys", keys);
         return result;
     }
 
@@ -116,6 +121,7 @@ public class SectionBusiness : Business<Section, Section>
     private dynamic MinifyItem(Item item, dynamic configs)
     {
         dynamic minified = new ExpandoObject();
+        minified.Id = item.Id;
         if (configs.ItemsHaveSupertitle == true)
         {
             minified.Supertitle = item.Supertitle;
@@ -140,11 +146,7 @@ public class SectionBusiness : Business<Section, Section>
         {
             minified.Avatar = item.RelatedItems.AvatarUrl;
         }
-        if (configs.ItemsHaveIconSvg == true)
-        {
-            minified.IconSvg = item.IconSvg;
-        }
-        if (configs.ItemsHaveIconSvg == true)
+        if (configs.ItemsHaveSvgIcon == true)
         {
             minified.IconSvg = item.IconSvg;
         }

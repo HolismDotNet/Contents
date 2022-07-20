@@ -15,6 +15,10 @@ public class ItemBusiness : Business<Item, Item>
     public List<Item> GetItems(long sectionId)
     {
         var items = GetList(i => i.SectionId == sectionId);
+        foreach(var item in items)
+        {
+            item.RelatedItems.Tags = new List<Tag>();
+        }
         return items;
     }
 
