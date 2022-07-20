@@ -25,15 +25,22 @@ public class SectionBusiness : Business<Section, Section>
         return section;
     }
 
-    public List<Section> GetByKeys(params string[] keys)
+    public List<dynamic> GetAllSections()
     {
-        var sections = new List<Section>();
+        var keys = GetKeys();
+        var sections = GetByKeys(keys.ToArray());
+        return sections;
+    }
+
+    public List<dynamic> GetByKeys(params string[] keys)
+    {
+        var sections = new List<dynamic>();
         foreach (var key in keys)
         {
             var section = Cache.Get(key);
             if (section != null)
             {
-                sections.Add((Section)section);
+                sections.Add(section);
             }
             else
             {
@@ -66,7 +73,7 @@ public class SectionBusiness : Business<Section, Section>
         return Get(id);
     }
 
-    public Dictionary<string, Section> LoadCache()
+    public Dictionary<string, dynamic> LoadCache()
     {
         var keys = GetKeys();
         var sections = new List<Section>();
@@ -78,7 +85,144 @@ public class SectionBusiness : Business<Section, Section>
                 sections.Add(section);
             }
         }
-        var result = sections.ToDictionary(i => i.Key, i => i);
+        var result = sections.ToDictionary(i => i.Key, i => Minify(i));
         return result;
+    }
+
+    private object Minify(Section section)
+    {
+        dynamic minified = new ExpandoObject();
+        var configs = section.RelatedItems.Configs;
+        MinifySection(section, minified);
+        if (configs.HasItems)
+        {
+            minified.Items = MinifyItems(section, minified);
+        }
+        return minified;
+    }
+
+    private dynamic MinifyItems(Section section, dynamic minified)
+    {
+        var items = section.RelatedItems.Items;
+        var configs = section.RelatedItems.Configs;
+        var minifiedItems = new List<dynamic>();
+        foreach (var item in items)
+        {
+            minifiedItems.Add(MinifyItem(item, configs));
+        }
+        return minifiedItems;
+    }
+
+    private dynamic MinifyItem(Item item, dynamic configs)
+    {
+        dynamic minified = new ExpandoObject();
+        if (configs.ItemsHaveSupertitle == true)
+        {
+            minified.Supertitle = item.Supertitle;
+        }
+        if (configs.ItemsHaveTitle == true)
+        {
+            minified.Title = item.Title;
+        }
+        if (configs.ItemsHaveSubtitle == true)
+        {
+            minified.Subtitle = item.Subtitle;
+        }
+        if (configs.ItemsHaveSummary == true)
+        {
+            minified.Summary = item.Summary;
+        }
+        if (configs.ItemsHaveImage == true)
+        {
+            minified.Image = item.RelatedItems.ImageUrl;
+        }
+        if (configs.ItemsHaveAvatar == true)
+        {
+            minified.Avatar = item.RelatedItems.AvatarUrl;
+        }
+        if (configs.ItemsHaveIconSvg == true)
+        {
+            minified.IconSvg = item.IconSvg;
+        }
+        if (configs.ItemsHaveIconSvg == true)
+        {
+            minified.IconSvg = item.IconSvg;
+        }
+        if (configs.ItemsHavePrimaryCta == true)
+        {
+            minified.PrimaryCtaText = item.PrimaryCtaText;
+            minified.PrimaryCtaLink = item.PrimaryCtaLink;
+        }
+        if (configs.ItemsHaveSecondaryCta == true)
+        {
+            minified.SecondaryCtaText = item.SecondaryCtaText;
+            minified.SecondaryCtaLink = item.SecondaryCtaLink;
+        }
+        if (configs.ItemsHaveTags == true)
+        {
+            var tags = item.RelatedItems.Tags as List<Tag>;
+            minified.Tags = tags.Select(i => new { i.Id, i.Name });
+        }
+        return minified;
+    }
+
+    private void MinifySection(Section section, dynamic minified)
+    {
+        var configs = section.RelatedItems.Configs;
+        minified.Id = section.Id;
+        minified.Key = section.Key;
+        if (configs.HasSupertitle == true)
+        {
+            minified.Supertitle = section.Supertitle;
+        }
+        if (configs.HasTitle == true)
+        {
+            minified.Title = section.Title;
+        }
+        if (configs.HasSubtitle == true)
+        {
+            minified.Subtitle = section.Subtitle;
+        }
+        if (configs.HasDescription == true)
+        {
+            minified.Description = section.Description;
+        }
+        if (configs.HasImage == true)
+        {
+            minified.ImageUrl = section.RelatedItems.ImageUrl;
+        }
+        if (configs.HasContent == true)
+        {
+            minified.Content = section.RelatedItems.Content.Content;
+        }
+        if (configs.HasPrimaryCta == true)
+        {
+            minified.PrimaryCtaText = section.PrimaryCtaText;
+            minified.PrimaryCtaLink = section.PrimaryCtaLink;
+        }
+        if (configs.HasSecondaryCta == true)
+        {
+            minified.SecondaryCtaText = section.SecondaryCtaText;
+            minified.SecondaryCtaLink = section.SecondaryCtaLink;
+        }
+        if (configs.ItemsHaveTags == true)
+        {
+            var items = section.RelatedItems.Items as List<Item>;
+            var tags = items
+            .SelectMany(i => (List<Tag>)i.RelatedItems.Tags)
+            .ToList();
+            var uniqueTags = new Dictionary<long, Tag>();
+            foreach (var tag in tags)
+            {
+                if (uniqueTags.ContainsKey(tag.Id))
+                {
+                    continue;
+                }
+                uniqueTags.Add(tag.Id, tag);
+            }
+            minified.Tags = uniqueTags
+            .Select(i => new { Id = i.Key, Name = i.Value.Name })
+            .ToList();
+        }
     }
 }
