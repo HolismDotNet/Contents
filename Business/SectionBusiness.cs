@@ -140,7 +140,7 @@ public class SectionBusiness : Business<Section, Section>
         }
         if (configs.ItemsHaveImage == true)
         {
-            minified.Image = item.RelatedItems.ImageUrl;
+            minified.ImageUrl = item.RelatedItems.ImageUrl;
         }
         if (configs.ItemsHaveAvatar == true)
         {
