@@ -185,6 +185,17 @@
                     "nullable": true
                 }
             ]
+        },
+        {
+            "name": "Parts",
+            "columns": [
+                {
+                    "name": "ParentId"
+                },
+                {
+                    "name": "PartTypes"
+                }
+            ]
         }
     ],
     "views": [
