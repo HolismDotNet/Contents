@@ -9,7 +9,7 @@ public class Part : IEntity, IParent
 
     public long Id { get; set; }
 
-    public long ParentId { get; set; }
+    public long? ParentId { get; set; }
 
     public string PartTypes { get; set; }
 

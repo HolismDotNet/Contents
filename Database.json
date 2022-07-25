@@ -190,7 +190,8 @@
             "name": "Parts",
             "columns": [
                 {
-                    "name": "ParentId"
+                    "name": "ParentId",
+                    "nullable": true
                 },
                 {
                     "name": "PartTypes"
